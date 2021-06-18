@@ -7,9 +7,9 @@ const BlogPage = ({ data }) => {
     <Layout pageTitle="My Blog Posts">
       <ul>
         {
-          data.allFile.nodes.map(node => (
-            <li key={node.name}>
-              {node.name}
+          data.allMarkdownRemark.edges.map(({ node }) => (
+            <li key={node.id}>
+              {node.frontmatter.title}
             </li>
           ))
         }
@@ -19,10 +19,17 @@ const BlogPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    allFile {
-      nodes {
-        name
+  query BlogQuery {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMM, YYYY")
+          }
+        }
       }
     }
   }
