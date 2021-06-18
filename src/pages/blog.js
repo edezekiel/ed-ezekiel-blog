@@ -29,7 +29,14 @@ export const query = graphql`
             title
             date(formatString: "DD MMM, YYYY")
           }
+          fields {
+            slug
+          }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
