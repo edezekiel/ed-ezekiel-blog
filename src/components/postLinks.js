@@ -5,7 +5,7 @@ const PostLinks = (props) => {
     <ul>
       {props.nodes.map(({ node }) => (
         <li key={node.id}>
-          <a href={node.fields.slug} className="s">
+          <a href={node.fields.slug} >
             <h3>{node.frontmatter.title}</h3>
             <time>{formatDate(node.frontmatter.date, node.frontmatter.year)}</time>
           </a>

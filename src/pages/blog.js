@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import PostLinks from '../components/postLinks'
+import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import PostLinks from "../components/postLinks"
 
 const BlogPage = ({ data }) => {
   const [currentTag, setCurrentTag] = useState(null)
