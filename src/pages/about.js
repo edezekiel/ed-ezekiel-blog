@@ -1,9 +1,11 @@
-import * as React from 'react';
-import Layout from '../components/layout'
+import * as React from "react";
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const AboutPage = () => {
   return (
     <Layout pageTitle="About Me">
+      <Seo title="About Me" />
       <article>
         <h2>Around the web</h2>
         <section className="contact-links">

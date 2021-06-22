@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, article }) => {
+const Seo = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
-
+  
   const {
     defaultTitle,
     defaultDescription,
@@ -16,15 +16,25 @@ const SEO = ({ title, description, image, article }) => {
     twitterUsername
   } = site.siteMetadata
 
+  const canonical = `${siteUrl}${pathname}`
+
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`
+    url: canonical
   }
 
   return (
-    <Helmet title={seo.title}>
+    <Helmet 
+      htmlAttributes={{ lang: seo.lang }}
+      link={[{
+        rel: "canonical",
+        href: canonical
+      }]}>
+
+      {seo.title && <title>{seo.title}</title>}      
+
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
@@ -48,16 +58,18 @@ const SEO = ({ title, description, image, article }) => {
   )
 }
 
-export default SEO
+export default Seo
 
-SEO.propTypes = {
+Seo.propTypes = {
+  lang: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
   article: PropTypes.bool,
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
+  lang: 'en',
   title: null,
   description: null,
   image: null,

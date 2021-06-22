@@ -2,10 +2,12 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostLinks from "../components/postLinks"
+import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout pageTitle="Home Page">
+      <Seo title="Home"/>
       <section className="heroBanner">
         <h1>Hi, I'm Ed Ezekiel.</h1>
         <p>
