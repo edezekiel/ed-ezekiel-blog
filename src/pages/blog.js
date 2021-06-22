@@ -1,12 +1,45 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import PostLinks from '../components/postLinks'
 
 const BlogPage = ({ data }) => {
+  const [currentTag, setCurrentTag] = useState(null)
+  useEffect(() => {}, [currentTag])
+
+  const filteredPosts = data.allMarkdownRemark.edges.filter(({ node }) => (
+    currentTag
+      ? node.frontmatter.tags.includes(currentTag)
+      : true
+  ));
+
+  const sortedTags = data.allMarkdownRemark.group
+    .sort((a, b) => b.totalCount - a.totalCount)
+
   return (
     <Layout pageTitle="My Blog Posts">
-      <PostLinks nodes={data.allMarkdownRemark.edges}></PostLinks>
+      <h2 className="blogIntro">
+        This blog is about programming, web development, and my journey from
+        practicing law to loving code.
+      </h2>
+
+      <h1>Posts: {currentTag === null ? "All" : `${currentTag}`}</h1>
+      <section className="postTags">
+        <button onClick={() => setCurrentTag(null)}>all</button>
+        {sortedTags.map(tag => (
+          <button
+            key={tag.fieldValue}
+            value={tag.fieldValue}
+            onClick={() => setCurrentTag(tag.fieldValue)}
+          >
+            {tag.fieldValue}
+          </button>
+        ))}
+      </section>
+
+      <section className="postLinks">
+        <PostLinks nodes={filteredPosts}></PostLinks>
+      </section>
     </Layout>
   )
 }
@@ -22,6 +55,7 @@ export const query = graphql`
             title
             date(formatString: "MMM DD")
             year:date(formatString: "YYYY")
+            tags
           }
           fields {
             slug
