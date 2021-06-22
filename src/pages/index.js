@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
+import PostLinks from '../components/postLinks'
 
 const IndexPage = ({ data }) => {
   return (
@@ -15,22 +16,14 @@ const IndexPage = ({ data }) => {
 
       <section className="latestPosts">
         <h2>Recent Posts</h2>
-        <ul>
-          {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }) => (
-            <li key={node.id}>
-              <Link to={node.fields.slug}>
-                <h3>{node.frontmatter.title}</h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <PostLinks nodes={data.allMarkdownRemark.edges.slice(0, 5)}></PostLinks>
       </section>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query {
+  query BlogsQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
@@ -38,7 +31,8 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMM, YYYY")
+            date(formatString: "MMM DD")
+            year:date(formatString: "YYYY")
           }
           fields {
             slug
