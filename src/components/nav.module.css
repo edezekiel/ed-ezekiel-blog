@@ -12,12 +12,7 @@
   padding-right: 2rem;
 }
 
-.nav-link-text {
-  color: black;
-}
-
 .site-title {
-  /* font-size: 3rem; */
-  color: gray;
+  font-size: 2rem;
   font-weight: 700;
 }

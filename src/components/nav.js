@@ -5,7 +5,6 @@ import {
   container,
   navLinks,
   navLinkItem,
-  navLinkText,
   siteTitle
  } from "./nav.module.css"
 
@@ -29,13 +28,13 @@ const Nav = () => {
           </Link>
         </li>
         <li className={navLinkItem}>
-          <Link to ="/" className={navLinkText}>Home</Link>
+          <Link to ="/">Home</Link>
         </li>
         <li className={navLinkItem}>
-          <Link to ="/blog" className={navLinkText}>Blog</Link>
+          <Link to ="/blog">Blog</Link>
         </li>
         <li className={navLinkItem}>
-          <Link to ="/about" className={navLinkText}>About</Link>
+          <Link to ="/about">About</Link>
         </li>
       </ul>
     </nav>

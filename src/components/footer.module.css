@@ -1,3 +1,11 @@
 .container {
-  composes: container from "../styles/shared.css"
+  composes: container from "../styles/shared.css";
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footerItem {
+  padding: 1rem;
+  flex-basis: auto;
 }
