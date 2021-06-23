@@ -28,7 +28,6 @@ module.exports = {
       },
       __key: "pages",
     },
-    "gatsby-plugin-image",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     {
@@ -46,6 +45,6 @@ module.exports = {
           }
         }]
       }
-    },
+    }
   ],
 };

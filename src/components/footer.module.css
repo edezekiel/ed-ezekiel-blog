@@ -1,8 +1,12 @@
 .container {
   composes: container from "../styles/shared.css";
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 10vh 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "copyright source gatsby netlify";
 }
 
 .footerBorder {
@@ -13,4 +17,19 @@
   padding: 1rem;
   flex-basis: auto;
   font-size: 1rem;
+  line-height: 1;
+}
+
+@media(max-width: 480px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas:
+      "copyright" 
+      "source"
+      "built" 
+      "hosted";
+  }
 }
