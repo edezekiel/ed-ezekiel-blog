@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import Header from "../components/header"
 import PostLinks from "../components/postLinks"
-import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   return (
