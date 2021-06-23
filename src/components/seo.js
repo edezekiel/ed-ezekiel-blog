@@ -10,6 +10,7 @@ const Seo = ({ title, description, image, article }) => {
   
   const {
     defaultTitle,
+    titleTemplate,
     defaultDescription,
     siteUrl,
     defaultImage,
@@ -31,9 +32,9 @@ const Seo = ({ title, description, image, article }) => {
       link={[{
         rel: "canonical",
         href: canonical
-      }]}>
-
-      {seo.title && <title>{seo.title}</title>}      
+      }]}
+      title={seo.title}
+      titleTemplate={titleTemplate}>
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -81,6 +82,7 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
+        titleTemplate
         defaultDescription: description
         siteUrl: url
         defaultImage: image
