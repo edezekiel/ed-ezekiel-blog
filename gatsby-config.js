@@ -1,6 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: "Ed Ezekiel Blog",
+    titleTemplate: "%s | Ed Ezekiel Blog",
+    description: "I'm a frontend web developer and former attorney. Welcome to my web development blog.",
+    url: "https://www.edezekiel.com",
+    image: "/logo.png",
+    twitterUsername: "EdwardAEzekiel",
+    author: "ed.a.ezekiel@gmail.com",
+    userName: 'Edward Ezekiel',
+    userEmail: 'ed.a.ezekiel@gmail.com'
   },
   plugins: [
     {
