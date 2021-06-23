@@ -1,5 +1,8 @@
 .container {
-  composes: container from "../styles/shared.css"
+  composes: container from "../styles/shared.css";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-links {
@@ -10,10 +13,9 @@
 
 .nav-link-item {
   padding-right: 2rem;
-  color: white;
+  /* color: white; */
 }
 
-.site-title {
-  font-size: 2rem;
-  font-weight: 700;
+.nav-link {
+  color: white;
 }

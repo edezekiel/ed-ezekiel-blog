@@ -5,7 +5,7 @@ import {
   container,
   navLinks,
   navLinkItem,
-  siteTitle
+  navLink
  } from "./nav.module.css"
 
 const Nav = () => {
@@ -20,24 +20,26 @@ const Nav = () => {
   `)
 
   return (
-    <nav className={container}>
-      <ul className={navLinks}>
-        <li className={navLinkItem}>
-          <Link to="/" className={siteTitle}>    
-            <span role="img" aria-label="notepad">🗒️</span>{data.site.siteMetadata.title}
-          </Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to ="/">Home</Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to ="/blog">Blog</Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to ="/about">About</Link>
-        </li>
-      </ul>
-    </nav>
+    <header className={container}>
+      <div>
+        <Link to="/" className={navLink}>    
+          Ed Ezekiel
+        </Link>
+      </div>
+      <nav>
+        <ul className={navLinks}>
+          <li className={navLinkItem}>
+            <Link to ="/" className={navLink}>Home</Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link to ="/blog" className={navLink}>Blog</Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link to ="/about" className={navLink}>About</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   )
 }
 
