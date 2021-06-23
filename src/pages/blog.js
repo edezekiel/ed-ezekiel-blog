@@ -18,14 +18,14 @@ const BlogPage = ({ data }) => {
     .sort((a, b) => b.totalCount - a.totalCount)
 
   return (
-    <Layout pageTitle="My Blog Posts">
+    <Layout pageTitle="Blog">
       <Seo title="Blog" />
-      <h2 className="blogIntro">
+      <p className="blogIntro">
         This blog is about programming, web development, and my journey from
         practicing law to loving code.
-      </h2>
+      </p>
 
-      <h1>Posts: {currentTag === null ? "All" : `${currentTag}`}</h1>
+      <h2>Posts: {currentTag === null ? "All" : `${currentTag}`}</h2>
       <section className="postTags">
         <button onClick={() => setCurrentTag(null)}>all</button>
         {sortedTags.map(tag => (

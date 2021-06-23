@@ -6,10 +6,9 @@ import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout pageTitle="Home Page">
+    <Layout pageTitle="Hi, I'm Ed Ezekiel">
       <Seo title="Home"/>
       <section className="heroBanner">
-        <h1>Hi, I'm Ed Ezekiel.</h1>
         <p>
           I'm a frontend web developer and former attorney. Welcome to my web 
           development blog. Find me <Link to="/about" id="nav-me">around the web</Link>.
