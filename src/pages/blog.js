@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Header from "../components/header"
 import PostLinks from "../components/postLinks"
 import Seo from "../components/seo"
 
@@ -16,15 +17,15 @@ const BlogPage = ({ data }) => {
 
   const sortedTags = data.allMarkdownRemark.group
     .sort((a, b) => b.totalCount - a.totalCount)
-
+  
+  const pageTitle = "Blog"
+  
   return (
-    <Layout pageTitle="Blog">
-      <Seo title="Blog" />
-      <p className="blogIntro">
-        This blog is about programming, web development, and my journey from
-        practicing law to loving code.
-      </p>
-
+    <Layout>
+      <Seo title={pageTitle} />
+      <Header pageTitle={pageTitle}>
+        <p>This blog is about programming, web development, and my journey from practicing law to loving code.</p>
+      </Header>
       <h2>Posts: {currentTag === null ? "All" : `${currentTag}`}</h2>
       <section className="postTags">
         <button onClick={() => setCurrentTag(null)}>all</button>

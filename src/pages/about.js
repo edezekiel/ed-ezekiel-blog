@@ -1,11 +1,15 @@
-import * as React from "react";
+import * as React from "react"
 import Layout from "../components/layout"
+import Header from "../components/header"
 import Seo from "../components/seo"
 
 const AboutPage = () => {
+  const pageTitle = "About Me"
+
   return (
-    <Layout pageTitle="About Me">
-      <Seo title="About Me" />
+    <Layout>
+      <Seo title={pageTitle} />
+      <Header pageTitle={pageTitle}></Header>
       <article>
         <h2>Around the web</h2>
         <section className="contact-links">
