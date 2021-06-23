@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: "Ed Ezekiel Blog",
@@ -28,6 +30,22 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-transformer-remark",
-    "gatsby-plugin-sharp"
+    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [{
+          resolve: `gatsby-remark-vscode`,
+          options: {
+            colorTheme: 'Dark+ (default dark)',
+            injectStyles: true,
+            extensions: [],
+            extensionDataDirectory:
+              path.resolve('extensions'),
+            logLevel: 'error'
+          }
+        }]
+      }
+    },
   ],
 };
