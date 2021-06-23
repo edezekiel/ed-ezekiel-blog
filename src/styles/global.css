@@ -1,0 +1,26 @@
+:root {
+  --color-bg: #0e141b;
+  --color-primary: #323232;
+  --color-border: #0D7377;
+  --color-link: #14FFEC;
+  --color-text: #FFFFFF;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  background-color: var(--color-link);
+  color: var(--color-bg);
+}

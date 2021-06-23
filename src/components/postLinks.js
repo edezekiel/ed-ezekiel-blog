@@ -1,14 +1,14 @@
 import React from "react"
+import { postLinks, postLink } from "./postLinks.module.css"
 
 const PostLinks = (props) => {
   return (
-    <ul>
+    <ul className={postLinks}>
       {props.nodes.map(({ node }) => (
-        <li key={node.id}>
-          <a href={node.fields.slug} >
-            <h3>{node.frontmatter.title}</h3>
-            <time>{formatDate(node.frontmatter.date, node.frontmatter.year)}</time>
-          </a>
+        <li key={node.id} className={postLink}>
+          <a href={node.fields.slug}>{node.frontmatter.title}</a>
+          <div><time>{formatDate(node.frontmatter.date, node.frontmatter.year)}</time></div>
+          {/* <div>Excerpt</div> */}
         </li>
       ))}
     </ul>

@@ -1,10 +1,9 @@
 import * as React from "react"
-import { heading } from "./header.module.css"
 
 const Header = ({ pageTitle, children }) => {
   return (
     <header>
-      <h1 className={heading}>{pageTitle}</h1>
+      <h1>{pageTitle}</h1>
       { children }
     </header>
   )
