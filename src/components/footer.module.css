@@ -5,7 +5,12 @@
   flex-wrap: wrap;
 }
 
+.footerBorder {
+  border-color: var(--color-border);
+}
+
 .footerItem {
   padding: 1rem;
   flex-basis: auto;
+  font-size: 1rem;
 }

@@ -24,7 +24,7 @@ const Nav = () => {
       <ul className={navLinks}>
         <li className={navLinkItem}>
           <Link to="/" className={siteTitle}>    
-            {data.site.siteMetadata.title}
+            <span role="img" aria-label="notepad">🗒️</span>{data.site.siteMetadata.title}
           </Link>
         </li>
         <li className={navLinkItem}>

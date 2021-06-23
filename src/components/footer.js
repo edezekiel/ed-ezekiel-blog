@@ -1,8 +1,14 @@
 import * as React from "react"
-import { container, footerItem } from "./footer.module.css"
+import { 
+  container,
+  footerBorder,
+  footerItem
+} from "./footer.module.css"
 
 const Footer = () => {
   return (
+    <>
+    <hr className={footerBorder}></hr>
     <footer className={container}>
       <p className={footerItem}>© 2018-{new Date().getFullYear()} Edward Ezekiel</p>
       <p className={footerItem}>
@@ -19,6 +25,7 @@ const Footer = () => {
         <a href="https://www.gatsbyjs.org">Netlify</a>
       </p>
     </footer>
+    </>
   )
 }
 

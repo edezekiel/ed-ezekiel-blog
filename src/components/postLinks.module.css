@@ -1,3 +1,13 @@
+.postDate {
+  margin-bottom: .5rem;
+  color: var(--color-text-offset);
+}
+
+.postHeading {
+  line-height: 1;
+  margin-bottom: 0;
+}
+
 .postLinks {
   padding-left: 0;
 }
