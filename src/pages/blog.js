@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/header"
 import PostLinks from "../components/postLinks"
+import { blogPosts, button, postTags } from "./blog.module.css"
 
 const BlogPage = ({ data }) => {
   const [currentTag, setCurrentTag] = useState(null)
@@ -27,11 +28,12 @@ const BlogPage = ({ data }) => {
         <p>This blog is about programming, web development, and my journey from practicing law to loving code.</p>
       </Header>
       <h2>Posts: {currentTag === null ? "All" : `${currentTag}`}</h2>
-      <section className="postTags">
-        <button onClick={() => setCurrentTag(null)}>all</button>
+      <section className={postTags}>
+        <button className={button} onClick={() => setCurrentTag(null)}>all</button>
         {sortedTags.map(tag => (
           <button
             key={tag.fieldValue}
+            className={button}
             value={tag.fieldValue}
             onClick={() => setCurrentTag(tag.fieldValue)}
           >
@@ -40,7 +42,7 @@ const BlogPage = ({ data }) => {
         ))}
       </section>
 
-      <section className="postLinks">
+      <section className={blogPosts}>
         <PostLinks nodes={filteredPosts}></PostLinks>
       </section>
     </Layout>

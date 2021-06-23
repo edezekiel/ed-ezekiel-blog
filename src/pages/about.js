@@ -12,25 +12,25 @@ const AboutPage = () => {
       <Header pageTitle={pageTitle}></Header>
       <article>
         <h2>Around the web</h2>
-        <section className="contact-links">
+        <section>
           <ul>
             <li>
-              Twitter: <a className="contact-link" href="https://twitter.com/EdwardAEzekiel">
+              Twitter: <a href="https://twitter.com/EdwardAEzekiel">
                 EdwardAEzekiel
             </a>
             </li>
             <li>
-              GitHub: <a className="contact-link" href="https://github.com/edezekiel">
+              GitHub: <a href="https://github.com/edezekiel">
                 edezekiel
             </a>
             </li>
             <li>
-              LinkedIn: <a className="contact-link" href="https://www.linkedin.com/in/edezekiel/">
+              LinkedIn: <a href="https://www.linkedin.com/in/edezekiel/">
                 edezekiel
             </a>
             </li>
             <li>
-              Email: <a className="contact-link" href="mailto: ed.a.ezekiel@gmail.com">
+              Email: <a href="mailto: ed.a.ezekiel@gmail.com">
                 ed.a.ezekiel@gmail.com
             </a>
             </li>

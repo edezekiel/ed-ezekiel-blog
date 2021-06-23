@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
         </p>
       </Header>
 
-      <section className="latestPosts">
+      <section>
         <h2>Recent Posts</h2>
           <PostLinks nodes={data.allMarkdownRemark.edges.slice(0, 5)}></PostLinks>
       </section>

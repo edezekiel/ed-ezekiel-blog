@@ -1,0 +1,27 @@
+.blogPosts {
+  margin-top: 4rem;
+}
+
+.button {
+  background-color: var(--color-bg-offset);
+  color: var(--color-text);
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg-offset);
+  box-shadow: none;
+  outline: none;
+}
+
+.postTags {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 0.5rem;
+  margin: 1rem 0 1rem 0;
+}
