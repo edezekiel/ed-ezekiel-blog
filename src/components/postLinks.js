@@ -8,7 +8,7 @@ const PostLinks = (props) => {
         <li key={node.id} className={postLink}>
           <h2><a href={node.fields.slug}>{node.frontmatter.title}</a></h2>
           <div><time>{formatDate(node.frontmatter.date, node.frontmatter.year)}</time></div>
-          {/* <div>Excerpt</div> */}
+          <div>{node.excerpt}</div>
         </li>
       ))}
     </ul>
