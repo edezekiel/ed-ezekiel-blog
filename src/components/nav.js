@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import { 
+import {
+  container,
   navLinks,
   navLinkItem,
   navLinkText,
@@ -20,7 +21,7 @@ const Nav = () => {
   `)
 
   return (
-    <nav>
+    <nav className={container}>
       <ul className={navLinks}>
         <li className={navLinkItem}>
           <Link to="/" className={siteTitle}>    

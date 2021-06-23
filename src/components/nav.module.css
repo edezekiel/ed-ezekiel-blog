@@ -1,3 +1,7 @@
+.container {
+  composes: container from "../styles/shared.css"
+}
+
 .nav-links {
   display: flex;
   list-style: none;

@@ -1,8 +1,9 @@
 import * as React from "react"
+import { container } from "./footer.module.css"
 
-const Footer = (props) => {
+const Footer = () => {
   return (
-    <footer>
+    <footer className={container}>
       <p>© 2018-{new Date().getFullYear()} Edward Ezekiel</p>
       <p>
         <a href="https://github.com/edezekiel/ed-ezekiel-blog">
