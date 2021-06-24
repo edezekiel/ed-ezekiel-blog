@@ -8,7 +8,6 @@ const Header = ({ pageTitle, children }) => {
       <h1 className={heading}>{pageTitle}</h1>
       { children }
     </header>
-    <hr className={headerBorder}></hr>
     </>
   )
 }
