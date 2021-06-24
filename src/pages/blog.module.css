@@ -25,3 +25,7 @@
   grid-gap: 0.5rem;
   margin: 1rem 0 1rem 0;
 }
+
+.subtitle {
+  composes: subtitle from "../styles/shared.css"
+}

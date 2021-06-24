@@ -11,3 +11,7 @@
   font-size: 4rem;
   line-height: 1;
 }
+
+.headerBorder {
+  composes: horizontal-rule from "../styles/shared.css";
+}

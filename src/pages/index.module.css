@@ -1,0 +1,7 @@
+.recent-posts {
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  composes: subtitle from "../styles/shared.css"
+}

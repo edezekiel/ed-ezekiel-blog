@@ -1,6 +1,6 @@
 ---
 date: 2020-12-31
-title: "Replacing the Lodash Curry Method With ES6 - Frontend Masters Series Part 2"
+title: "Replacing the Lodash Curry Method With ES6"
 published: false
 tags: ["javascript"]
 canonical_url:

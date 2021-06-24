@@ -1,35 +1,19 @@
 .container {
   composes: container from "../styles/shared.css";
+  max-width: 100%;
   padding: 10vh 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-  grid-template-areas:
-    "copyright source gatsby netlify";
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footerBorder {
-  border-color: var(--color-border);
+  composes: horizontal-rule from "../styles/shared.css";
 }
 
 .footerItem {
-  padding: 1rem;
-  flex-basis: auto;
-  font-size: 1rem;
+  flex-grow: 1;
+  text-align: center;
+  flex-basis: 200px;
+  font-size: 1.2rem;
   line-height: 1;
-}
-
-@media(max-width: 480px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center;
-    grid-template-areas:
-      "copyright" 
-      "source"
-      "built" 
-      "hosted";
-  }
 }

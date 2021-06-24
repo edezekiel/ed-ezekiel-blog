@@ -1,6 +1,6 @@
 ---
 date: 2021-01-26
-title: "Git Filter Repo - Splitting a Subfolder Into A New Repository"
+title: "Git Filter Repo"
 published: false
 tags: ["git", "shell"]
 canonical_url:
