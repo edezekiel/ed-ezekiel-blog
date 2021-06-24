@@ -1,3 +1,8 @@
 .container {
   composes: container from "../styles/shared.css"
 }
+
+.navBorder {
+  composes: horizontal-rule from "../styles/shared.css";
+  margin: 0;
+}
