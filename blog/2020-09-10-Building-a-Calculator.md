@@ -1,8 +1,8 @@
 ---
 date: 2020-09-10
-title: "Building a Calculator - Frontend Masters Series"
-published: false
-tags: ["javascript", "css"]
+title: 'Building a Calculator - Frontend Masters Series'
+published: true
+tags: ['javascript', 'css']
 canonical_url:
 cover_image: ../../images/coverImages/2020-09-10-cover-image.jpeg
 ---
@@ -25,10 +25,10 @@ There are probably purely functional ways of accomplishing this, but for simplic
 
 ```javascript
 const calculator = {
-  firstOperand: "0",
-  secondOperand: "0",
+  firstOperand: '0',
+  secondOperand: '0',
   currentOperation: null,
-}
+};
 ```
 
 This object simply stores the firstOperand, secondOperand, and currentOperation. The rest of the app is a set of functions to build numbers, edit numbers (backspace), update the stdout, perform calculations, and reset everything.
@@ -37,24 +37,24 @@ For me, the trickiest part was determining how and when to update state in the c
 
 ```javascript
 function updateCalculatorValue(num) {
-  !calculator.currentOperation ? buildOperand(num) : buildOperand(num, false)
+  !calculator.currentOperation ? buildOperand(num) : buildOperand(num, false);
 }
 
 function buildOperand(num, first = true) {
   if (first) {
-    if (num !== "0" && calculator.firstOperand !== "0") {
-      calculator.firstOperand = calculator.firstOperand.concat(num)
+    if (num !== '0' && calculator.firstOperand !== '0') {
+      calculator.firstOperand = calculator.firstOperand.concat(num);
     } else {
-      calculator.firstOperand = num
+      calculator.firstOperand = num;
     }
-    setStdout(calculator.firstOperand)
+    setStdout(calculator.firstOperand);
   } else {
-    if (num !== "0" && calculator.secondOperand !== "0") {
-      calculator.secondOperand = calculator.secondOperand.concat(num)
+    if (num !== '0' && calculator.secondOperand !== '0') {
+      calculator.secondOperand = calculator.secondOperand.concat(num);
     } else {
-      calculator.secondOperand = num
+      calculator.secondOperand = num;
     }
-    setStdout(calculator.secondOperand)
+    setStdout(calculator.secondOperand);
   }
 }
 ```

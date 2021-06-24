@@ -1,8 +1,8 @@
 ---
 date: 2018-11-06
-title: "Pry Tips for Ruby Developers"
-published: false
-tags: ["ruby", "bootcamp"]
+title: 'Pry Tips for Ruby Developers'
+published: true
+tags: ['ruby', 'bootcamp']
 canonical_url:
 cover_image: ../../images/coverImages/2018-11-06-cover-image.jpeg
 ---

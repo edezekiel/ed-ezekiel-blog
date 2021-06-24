@@ -1,8 +1,8 @@
 ---
 date: 2019-07-23
-title: "Live Stellar Wallet for Testing Smart Contracts"
-published: false
-tags: ["react", "projects", "css", "javascript"]
+title: 'Live Stellar Wallet for Testing Smart Contracts'
+published: true
+tags: ['react', 'projects', 'css', 'javascript']
 canonical_url:
 cover_image: ../../images/coverImages/2019-07-23-cover-image.jpeg
 ---
@@ -37,14 +37,17 @@ In contrast, stellar smart contracts can only accomplish a limited set of tasks.
 const baseFee = await server.fetchBaseFee();
 
 const transaction = new StellarSdk.TransactionBuilder(account, {
-fee: baseFee })
+  fee: baseFee,
+});
 ```
 
 2.  You didn't load the account before building the transaction:
 
 ```javascript
 const account = await server.loadAccount(sourceKeys.publicKey());
-const transaction = new StellarSdk.TransactionBuilder(account, { fee: baseFee })
+const transaction = new StellarSdk.TransactionBuilder(account, {
+  fee: baseFee,
+});
 ```
 
 #### Why can't I submit the Unlock XDR to Horizon?
@@ -82,10 +85,10 @@ const transaction = new StellarSdk.TransactionBuilder(escrowAccount, {
     ).toString(),
     // The maximum time is set to 0, to denote that the transaction does not have
     // an expiration date.
-    maxTime: (0).toString()
+    maxTime: (0).toString(),
   },
-  sequence: (parseInt(escrowAccount.sequence) + 1).toString()
-})
+  sequence: (parseInt(escrowAccount.sequence) + 1).toString(),
+});
 ```
 
 ## 4. Instructions

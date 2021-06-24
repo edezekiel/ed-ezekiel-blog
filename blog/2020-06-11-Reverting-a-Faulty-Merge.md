@@ -1,8 +1,8 @@
 ---
 date: 2020-06-11
-title: "Reverting a Faulty Merge and Fixing the Feature Branch"
-published: false
-tags: ["git"]
+title: 'Reverting a Faulty Merge and Fixing the Feature Branch'
+published: true
+tags: ['git']
 canonical_url:
 cover_image: ../../images/coverImages/2020-06-11-cover-image.jpeg
 ---
@@ -19,7 +19,7 @@ Linus Torvalds created git. He distributed an article/mailing list message in 20
 
 Linus' top advice in this situation is to try to fix the problem without using revert:
 
->If at all possible, for example, if you find a problem that got merged into the main tree, rather than revert the merge, try _really_ hard to bisect the problem down into the branch you merged, and just fix it, or try to revert the individual commit that caused it.
+> If at all possible, for example, if you find a problem that got merged into the main tree, rather than revert the merge, try _really_ hard to bisect the problem down into the branch you merged, and just fix it, or try to revert the individual commit that caused it.
 
 Note, if you haven't pushed the merge to GitHub you have more options for fixing the faulty merge. See [Fix the References](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
 
@@ -31,7 +31,7 @@ If step 1 didn't work and Linus' article is not (mostly) clear to you, then you 
 
 Otherwise, continue on to Step 3.
 
-## Step 3: Use a little git magic***
+## Step 3: Use a little git magic\*\*\*
 
 This step is a high level summary of reverting a faulty merge, fixing any issues, and bringing feature back.
 
@@ -51,12 +51,12 @@ Fix mistakes on the side branch (feature branch) and commit changes to that bran
 
 As noted by Linus:
 
->If the faulty side branch was fixed by adding corrections on top, then doing a revert of the previous revert would be the right thing to do.
+> If the faulty side branch was fixed by adding corrections on top, then doing a revert of the previous revert would be the right thing to do.
 
 ### iv. Merge the updated topic branch into mainline branch
 
 This step is what will finally bring features back into the mainline branch.
 
-## ***Disclaimer
+## \*\*\*Disclaimer
 
 This solution is not a cure-all. For example, if significant development occurs after the feature branch is originally merged into the mainline branch, running `git revert` can cause breaking changes even if you follow the steps described in this document.

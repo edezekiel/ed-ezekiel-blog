@@ -1,15 +1,15 @@
 ---
 date: 2020-02-28
-title: "Project Palomar, Building a Spring Boot App the Agile Way"
-published: false
-tags: ["projects", "agile", "git"]
+title: 'Project Palomar, Building a Spring Boot App the Agile Way'
+published: true
+tags: ['projects', 'agile', 'git']
 canonical_url:
 cover_image: ../../images/coverImages/2020-02-28-cover-image.jpeg
 ---
 
 I've spent the past month at Ubiquisoft building a new Spring Boot app. It has been a flurry of excitement, roadblocks, teamwork, and victories.
 
-I'll refer to the Spring Boot app as "Palomar". Palomar is the backend for an iOS app. The persistence layer is an Oracle database. 
+I'll refer to the Spring Boot app as "Palomar". Palomar is the backend for an iOS app. The persistence layer is an Oracle database.
 
 I'm really happy with how the Palomar MVP turned out. The app requires zero configuration to install, has an in-memory database for development, and seeds the database with realistic data. It's also set up for Continuous Integration (GitHub Actions), and is ready to be dropped in a production environment.
 
@@ -73,11 +73,11 @@ mvn spring-boot:run -Drun.profiles=oracle
 
 ### Maven Internal Repositories
 
-The Central Maven Repository is like the npm repository: it contains an incredible variety of dependencies (code written by someone else) that a developer can download and install in their project. However, some maven dependencies aren't available from the Central Repository. 
+The Central Maven Repository is like the npm repository: it contains an incredible variety of dependencies (code written by someone else) that a developer can download and install in their project. However, some maven dependencies aren't available from the Central Repository.
 
-There are a few workarounds to this issue. It is possible to simply download the dependency and save it on your local machine in .m2 directory. You can also set up a service like Archiva on your local machine. Once you are authenticated through Archiva you can then download certain dependencies. 
+There are a few workarounds to this issue. It is possible to simply download the dependency and save it on your local machine in .m2 directory. You can also set up a service like Archiva on your local machine. Once you are authenticated through Archiva you can then download certain dependencies.
 
-One major drawback to these approaches is that it prohibits Continuous Integration ("CI"). For example, GitHub Actions can't build your app if it needs Archiva access or a specific dependency in folder on the build agent. 
+One major drawback to these approaches is that it prohibits Continuous Integration ("CI"). For example, GitHub Actions can't build your app if it needs Archiva access or a specific dependency in folder on the build agent.
 
 I eventually discovered that you can store a dependency in an "internal repository" inside your project. This requires you to add the repository to your pom profile, create a "repo" directory in your project, and save the dependency (a "jar" file) inside the repo directory.
 
@@ -95,7 +95,7 @@ Here is an [Apache guide](https://maven.apache.org/guides/introduction/introduct
 
 ### JPA, Hibernate, and H2
 
-Coming from a Ruby on Rails background, I've been spoiled with Active Record. It makes it soooo easy to model your relationships, create a schema, create seed data for testing purposes, and migrate the schema. 
+Coming from a Ruby on Rails background, I've been spoiled with Active Record. It makes it soooo easy to model your relationships, create a schema, create seed data for testing purposes, and migrate the schema.
 
 These things are possible with Spring Boot with a little extra effort a few dependencies ("Spring Data JPA", "H2").
 
@@ -114,7 +114,7 @@ So, the code below means that you have a "Sky" class that should be persisted in
 @Table(name="tbl_sky")
 public class Sky implements Serializable {
    ...
-}    
+}
 ```
 
 ### H2, data.sql
@@ -162,7 +162,6 @@ jpa:
 ```
 
 You can use the create.sql file as the basis for a schema.sql file in production. Not only does this save you from manually writing sql, it gives you confidence that your app will work across different environments.
-
 
 ## Agile Methodologies
 

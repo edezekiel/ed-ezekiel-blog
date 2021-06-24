@@ -1,8 +1,8 @@
 ---
 date: 2018-11-24
-title: "Kaizoku - My First Ruby Gem"
-published: false
-tags: ["ruby", "bootcamp", "projects", "shell"]
+title: 'Kaizoku - My First Ruby Gem'
+published: true
+tags: ['ruby', 'bootcamp', 'projects', 'shell']
 canonical_url:
 cover_image: ../../images/coverImages/2018-11-24-cover-image.jpeg
 ---

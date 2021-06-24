@@ -1,8 +1,8 @@
 ---
 date: 2018-12-07
-title: "❤️ Pair Programming"
-published: false
-tags: ["ruby", "bootcamp", "projects", "agile"]
+title: '❤️ Pair Programming'
+published: true
+tags: ['ruby', 'bootcamp', 'projects', 'agile']
 canonical_url:
 cover_image: ../../images/coverImages/2018-12-07-cover-image.jpeg
 ---

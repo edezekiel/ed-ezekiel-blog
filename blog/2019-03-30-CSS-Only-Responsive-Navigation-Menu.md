@@ -1,8 +1,8 @@
 ---
 date: 2019-03-30
-title: "CSS-Only Responsive Navigation Menu"
-published: false
-tags: ["css", "projects"]
+title: 'CSS-Only Responsive Navigation Menu'
+published: true
+tags: ['css', 'projects']
 canonical_url:
 cover_image: ../../images/coverImages/2019-03-30-cover-image.jpeg
 ---
