@@ -1,8 +1,8 @@
 ---
 date: 2019-08-29
-title: "Learning GraphQL"
-published: false
-tags: ["jamstack"]
+title: 'Learning GraphQL'
+published: true
+tags: ['jamstack']
 canonical_url:
 cover_image: ../../images/coverImages/2019-08-29-cover-image.jpeg
 ---
@@ -21,7 +21,7 @@ GraphQL is a query language that lets you request the exact data you want. For e
 
 ```javascript
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -39,7 +39,7 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 ```
 
 My new site stores all data (markdown files and images) in the frontend repository. GraphQL lets me easily pull this data and programmatically build pages.
@@ -83,7 +83,7 @@ export const FEED_QUERY = gql`
       }
     }
   }
-`
+`;
 ```
 
 The React Apollo client helps send this query to my Express server. The Express server is built on Apollo, so it's set up to accept GraphQL queries.

@@ -1,7 +1,7 @@
 ---
 date: 2021-01-26
 title: "Git Filter Repo"
-published: false
+published: true
 tags: ["git", "shell"]
 canonical_url:
 cover_image: ../../images/coverImages/2021-01-26-cover-image.jpeg

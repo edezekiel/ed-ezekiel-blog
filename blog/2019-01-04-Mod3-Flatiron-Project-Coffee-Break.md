@@ -1,8 +1,8 @@
 ---
 date: 2019-01-04
-title: "Mod 3 Flatiron Project - Coffee Break"
-published: false
-tags: ["javascript", "ruby", "bootcamp", "projects", "agile"]
+title: 'Mod 3 Flatiron Project - Coffee Break'
+published: true
+tags: ['javascript', 'ruby', 'bootcamp', 'projects', 'agile']
 canonical_url:
 cover_image: ../../images/coverImages/2019-01-04-cover-image.jpeg
 ---

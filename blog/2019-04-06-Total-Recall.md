@@ -1,8 +1,8 @@
 ---
 date: 2019-04-06
-title: "Total Recall"
-published: false
-tags: ["projects"]
+title: 'Total Recall'
+published: true
+tags: ['projects']
 canonical_url:
 cover_image: ../../images/coverImages/2019-04-06-cover-image.jpeg
 ---

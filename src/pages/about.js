@@ -12,15 +12,12 @@ const AboutPage = () => {
       <Header pageTitle={pageTitle}></Header>
       <article>
         <p>
-          I live in Memphis, TN with my wife, daughter, and two dogs (go Grizz!). I work at <a href="https://www.ubiquisoft.com/">Ubiquisoft</a> as
-          a frontend web developer.
+          I live in Memphis, TN with my wife, two children, and two dogs (go Grizz!). I work at <a href="https://www.ubiquisoft.com/">Ubiquisoft</a> as a frontend web developer.
         </p>
-
         <p>
           My passion for coding began at a legal tech company. I started working
           there as an attorney, but steadily got hooked on programming.
         </p>
-
         <p>
           In 2018 I enrolled in Flatiron's immersive software engineering
           bootcamp. It was an incredible experience where I learned JavaScript,

@@ -1,8 +1,8 @@
 ---
 date: 2019-01-17
 title: 'Using Javascript "this" Keyword in React'
-published: false
-tags: ["javascript", "bootcamp"]
+published: true
+tags: ['javascript', 'bootcamp']
 canonical_url:
 cover_image: ../../images/coverImages/2019-01-17-cover-image.jpeg
 ---
@@ -29,30 +29,31 @@ Let's create a simple object and set some properties:
 
 ```javascript
 // create an empty object using the ES6 object initializer
-let myObject = {}
+let myObject = {};
 
-myObject
-  >> {}
+myObject >> {};
 
 // defining "a" and "b" properties and setting their values using dot notation
-myObject.a = 100
-myObject.b = 50
+myObject.a = 100;
+myObject.b = 50;
 ```
 
 Next, we can define a method called "mySum" on myObject. When mySum calls on `this`, `this` refers to myObject:
 
 ```javascript
 // example demonstrating the scope of this inside an object
-myObject.mySum = function() {return this.a + this.b}
+myObject.mySum = function () {
+  return this.a + this.b;
+};
 
-myObject.mySum()
-  >>150
+myObject.mySum() >> 150;
 
 // another example
-myObject.newFunction = function() {console.log(this)}
+myObject.newFunction = function () {
+  console.log(this);
+};
 
-myObject.newFunction()
-  >> {a: 100, b: 50, mySum: ƒ, newFunction: ƒ}
+myObject.newFunction() >> { a: 100, b: 50, mySum: ƒ, newFunction: ƒ };
 ```
 
 ### Arrow Functions: Explicitly Setting `this`

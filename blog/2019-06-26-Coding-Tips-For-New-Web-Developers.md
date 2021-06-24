@@ -1,8 +1,8 @@
 ---
 date: 2019-06-26
-title: "Coding Tips For New Web Developers."
-published: false
-tags: ["react", "javascript", "git"]
+title: 'Coding Tips For New Web Developers.'
+published: true
+tags: ['react', 'javascript', 'git']
 canonical_url:
 cover_image: ../../images/coverImages/2019-06-26-cover-image.jpeg
 ---

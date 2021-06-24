@@ -1,8 +1,8 @@
 ---
 date: 2019-05-17
-title: "Looping Using ES6 Syntax"
-published: false
-tags: ["javascript"]
+title: 'Looping Using ES6 Syntax'
+published: true
+tags: ['javascript']
 canonical_url:
 cover_image: ../../images/coverImages/2019-05-17-cover-image.jpeg
 ---
@@ -17,7 +17,7 @@ So, what's a good way to accomplish this goal? One approach is to use a traditio
 
 ```javascript
 for (let i = 0; i < string.length; i++) {
-  console.log(string.charAt(i))
+  console.log(string.charAt(i));
 }
 ```
 
@@ -27,7 +27,7 @@ Since the introduction of ES6, you can use a `for...of` loop:
 
 ```javascript
 for (character of string) {
-  console.log(character)
+  console.log(character);
 }
 ```
 
@@ -72,12 +72,13 @@ Once again MDN has a great example demonstrating how to use this method to check
 Let's take a look back at our example to confirm whether `for...of` and/or `for...in` works:
 
 ```javascript
-let myString = "valar morghulis"
+let myString = 'valar morghulis';
 
-"hello world"[Symbol.iterator]()  
+'hello world'[Symbol.iterator]();
 // StringIterator {}
 
-console.log(myString.propertyIsEnumerable([1]))  
+console.log(myString.propertyIsEnumerable([1]));
 // true
 ```
+
 As demonstrated above, strings have the Symbol.iterator method. In addition, strings are indexed by character. Thus, you can use `for...of` or a `for...in` statement to iterate over characters in a string.

@@ -1,8 +1,8 @@
 ---
 date: 2018-10-12
-title: "CSS Styling Using Flexbox"
-published: false
-tags: ["css"]
+title: 'CSS Styling Using Flexbox'
+published: true
+tags: ['css']
 canonical_url:
 cover_image: ../../images/coverImages/2018-10-12-cover-image.jpeg
 ---

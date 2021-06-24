@@ -1,8 +1,8 @@
 ---
 date: 2020-12-31
-title: "Replacing the Lodash Curry Method With ES6"
-published: false
-tags: ["javascript"]
+title: 'Replacing the Lodash Curry Method With ES6'
+published: true
+tags: ['javascript']
 canonical_url:
 cover_image: ../../images/coverImages/2020-12-31-cover-image.jpeg
 ---
@@ -18,9 +18,9 @@ This is my second post covering my journey through the Beginner [Frontend Master
 Lodash [describes itself](https://lodash.com/) as "modern JavaScript utility library delivering modularity, performance & extras." Even if you haven't used the tool before, you've probably seen it used online or in common libraries. Lodash is an object with lots of methods for iterating over arrays, creating composable functions, etc. For example:
 
 ```javascript
-_.defaults({ a: 1 }, { a: 3, b: 2 })
+_.defaults({ a: 1 }, { a: 3, b: 2 });
 // → { 'a': 1, 'b': 2 }
-_.partition([1, 2, 3, 4], n => n % 2)
+_.partition([1, 2, 3, 4], (n) => n % 2);
 // → [[1, 3], [2, 4]]
 ```
 
@@ -29,7 +29,7 @@ _.partition([1, 2, 3, 4], n => n % 2)
 It seems like Lodash has [lost popularity](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) over the years thanks to ES5 and ES6. Indeed, in Bianca's course we use ES6 syntax to build several lodash methods from scratch. The exercises start out with creating a new `_` object, writing the ES6 methods, and assigning them to the new object:
 
 ```javascript
-const _ = {}
+const _ = {};
 
 /**
   Declare ES6 curry, compose and reduce methods. 
@@ -38,9 +38,9 @@ const _ = {}
 /**
   Assign methods to _ object
 */
-_.curry = curry
-_.compose = compose
-_.reduce = reduce
+_.curry = curry;
+_.compose = compose;
+_.reduce = reduce;
 ```
 
 In this post I'll describe the `_.curry` method I made in this course.
@@ -50,20 +50,20 @@ In this post I'll describe the `_.curry` method I made in this course.
 The `_.curry` method just took up one line of code, but it was one of the harder methods for me to wrap my head around:
 
 ```javascript
-const _ = {}
+const _ = {};
 
-const abc = function(a, b, c) {
-  return [a, b, c]
-}
+const abc = function (a, b, c) {
+  return [a, b, c];
+};
 
-const curry = func => a => b => c => func(a, b, c)
+const curry = (func) => (a) => (b) => (c) => func(a, b, c);
 
-_.curry = curry
+_.curry = curry;
 
-const curried = _.curry(abc)
+const curried = _.curry(abc);
 
-curried(1)(2)(3) // [ 1, 2, 3 ]
-abc(1, 2, 3) // [1, 2, 3]
+curried(1)(2)(3); // [ 1, 2, 3 ]
+abc(1, 2, 3); // [1, 2, 3]
 ```
 
 The above `_.curry` method takes a function as an argument. In this case the argument is `abc`. The argument (function `abc`) is transformed to another function called `curried`. Invoking `curried(1)` returns a function that processes the next argument, etc. So `curried(1)(2)(3)` returns an array `[1, 2, 3]`.
@@ -71,9 +71,9 @@ The above `_.curry` method takes a function as an argument. In this case the arg
 We could refactor `curried(1)(2)(3)` to explicitly show each step:
 
 ```javascript
-firstIsProcessed = curried(1)
-secondIsProcessed = firstIsProcessed(2)
-result = secondIsProcessed(3) // [1, 2, 3]
+firstIsProcessed = curried(1);
+secondIsProcessed = firstIsProcessed(2);
+result = secondIsProcessed(3); // [1, 2, 3]
 ```
 
 ## Why Bother Using Currying?
@@ -83,23 +83,23 @@ At a quick glance, you might notice that we could have gotten the same return va
 A comment in this [StackOverflow thread](https://stackoverflow.com/questions/113780/javascript-curry-what-are-the-practical-applications) is most concise rationale I've seen for using currying:
 
 ```markdown
-After some more thinking, I posit there is one valid use 
-case for currying in JavaScript: if you are trying to 
-write using pure functional programming techniques using 
+After some more thinking, I posit there is one valid use
+case for currying in JavaScript: if you are trying to
+write using pure functional programming techniques using
 JavaScript. Seems like a rare use case though.
 ```
 
 Of course, functional programming enthusiasts like Eric Elliot place a high priority on using pure functions:
 
 ```markdown
-I recommend that you favor pure functions. Meaning, if it is 
-practical to implement a program requirement using pure 
-functions, you should use them over other options. Pure 
-functions take some input and return some output based on 
-that input. They are the simplest reusable building blocks 
-of code in a program.Perhaps the most important design 
+I recommend that you favor pure functions. Meaning, if it is
+practical to implement a program requirement using pure
+functions, you should use them over other options. Pure
+functions take some input and return some output based on
+that input. They are the simplest reusable building blocks
+of code in a program.Perhaps the most important design
 principle in computer science is KISS (Keep It Simple, Stupid).
-I prefer Keep It Stupid Simple. Pure functions are stupid 
+I prefer Keep It Stupid Simple. Pure functions are stupid
 simple in the best possible way.
 ```
 

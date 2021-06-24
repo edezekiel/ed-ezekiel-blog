@@ -1,30 +1,30 @@
 ---
 date: 2020-01-27
-title: "A Smarter Robot - Eloquent JavaScript Continued"
-published: false
-tags: ["javascript", "projects"]
+title: 'A Smarter Robot - Eloquent JavaScript Continued'
+published: true
+tags: ['javascript', 'projects']
 canonical_url:
 cover_image: ../../images/coverImages/2020-01-27-cover-image.jpeg
 ---
 
-I've made it through Eloquent JavaScript, chapter 10! This post is about the Project Robot exercises in Chapters 7 and 10. After a lot of head-scratching I  put together a solution I'm happy with. Here is a link to [my solution](https://github.com/edezekiel/eloquent-robot-modules) in GitHub. 
+I've made it through Eloquent JavaScript, chapter 10! This post is about the Project Robot exercises in Chapters 7 and 10. After a lot of head-scratching I put together a solution I'm happy with. Here is a link to [my solution](https://github.com/edezekiel/eloquent-robot-modules) in GitHub.
 
 ## The Problems
 
-Chapters 7 and 10 of Eloquent JavaScript concern optimizing a package delivery "robot", and splitting your code up into modules. Marijn Haverbeke (author of Eloquent JavaScript) provides most of the code for creating the "village", the roads, and the basic delivery robot. 
+Chapters 7 and 10 of Eloquent JavaScript concern optimizing a package delivery "robot", and splitting your code up into modules. Marijn Haverbeke (author of Eloquent JavaScript) provides most of the code for creating the "village", the roads, and the basic delivery robot.
 
 ## A Smarter Robot
 
-Marijn gives us the code for basic delivery robots. The first robot randomly picks a direction until all packages have been delivered. The "mail route" robot visits every house twice. Finally, the goalOrientedRobot used an algorithm to optimize how to get a parcel from point A to point B. The goalOrientedRobot generally completes its deliveries in about 16 turns. 
+Marijn gives us the code for basic delivery robots. The first robot randomly picks a direction until all packages have been delivered. The "mail route" robot visits every house twice. Finally, the goalOrientedRobot used an algorithm to optimize how to get a parcel from point A to point B. The goalOrientedRobot generally completes its deliveries in about 16 turns.
 
-Marijn then challenges readers to create an even more efficient robot. At first, it was difficult to know where to start. I "observed" how the goalOrientedRobot worked by stepping through code and using the animation tool built into the book. 
+Marijn then challenges readers to create an even more efficient robot. At first, it was difficult to know where to start. I "observed" how the goalOrientedRobot worked by stepping through code and using the animation tool built into the book.
 
-Eventually, I realized that the goalOrientedRobot  randomly picked its first parcel. This seemed like a good place to save some steps. 
+Eventually, I realized that the goalOrientedRobot randomly picked its first parcel. This seemed like a good place to save some steps.
 
 I built a "smarterRobot" to compare all "parcelRoutes", and pick the shortest option to start with:
 
 ```javascript
-function shortestParcelRoute(parcelRoutes){
+function shortestParcelRoute(parcelRoutes) {
   let shortestRoute = parcelRoutes[0];
 
   if (parcelRoutes.length > 1) {
@@ -37,11 +37,9 @@ function shortestParcelRoute(parcelRoutes){
 
   return shortestRoute;
 }
-
 ```
 
 My "smarterRobot" generally beats the goalOrientedRobot by 3-4 steps.
-
 
 ## JavaScript Modules
 
@@ -55,13 +53,13 @@ I hit a few road bumps when I tried to create my own modules. The biggest hurdle
 
 Modern browsers do not allow JavaScript files to access files on the local filesystem, even if the html document is also on the filesystem. The browser throws a CORS error and prevents the file from running.
 
-Eventually I came across a [stack overflow](https://stackoverflow.com/questions/50197495/javascript-modules-and-cors) post addressing this issue. The post recommended running the files through a local web server, such as [http-server](https://www.npmjs.com/package/http-server). 
+Eventually I came across a [stack overflow](https://stackoverflow.com/questions/50197495/javascript-modules-and-cors) post addressing this issue. The post recommended running the files through a local web server, such as [http-server](https://www.npmjs.com/package/http-server).
 
 All you have to do is <code>cd</code> into the project directory and enter <code>http-server</code>. It automatically spins up a web server on your computer accessible through localhost:8080. Open up that page and you're code will run! ... well almost. I ran into another issue.
 
 ### name-is-not-exported-by-module
 
-After I started using http-server I still kept getting another error. The browser kept telling me that "some function" is not exported by "some module". I tweaked the export and import statements, restarted the server, and edited the html script tag but it still didn't work. 
+After I started using http-server I still kept getting another error. The browser kept telling me that "some function" is not exported by "some module". I tweaked the export and import statements, restarted the server, and edited the html script tag but it still didn't work.
 
 After some googling I found a post recommending that I try to "Empty Cache and Hard Reload" in the browser. This finally fixed my issue and my code loaded!
 
@@ -69,4 +67,4 @@ In retrospect, I was running into two issues. First, I should have used <code>ex
 
 ## Concluding Thoughts
 
-My "smarterRobot" isn't the fastest, and my modules aren't perfect. Even so, I'm incredibly proud of my work. I simply wasn't capable of completing these exercises a year ago, so it's a great feeling to get through them now. 
+My "smarterRobot" isn't the fastest, and my modules aren't perfect. Even so, I'm incredibly proud of my work. I simply wasn't capable of completing these exercises a year ago, so it's a great feeling to get through them now.
