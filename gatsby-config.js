@@ -6,7 +6,7 @@ module.exports = {
     titleTemplate: "%s | Ed Ezekiel Blog",
     description: "I'm a frontend web developer and former attorney. Welcome to my web development blog.",
     url: "https://www.edezekiel.com",
-    image: "/static/logo.png",
+    image: "src/images/logo.svg",
     twitterUsername: "EdwardAEzekiel",
     author: "ed.a.ezekiel@gmail.com",
     userName: 'Edward Ezekiel',
@@ -45,6 +45,18 @@ module.exports = {
           }
         }]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Ed Ezekiel Blog",
+        short_name: "Ed Ezekiel Blog",
+        start_url: "https://www.edezekiel.com",
+        background_color: "#16161a",
+        theme_color: "#7f5af0",
+        display: "standalone",
+        icon: "src/images/logo.svg", // This path is relative to the root of the site.
+      },
+    },
   ],
 };
