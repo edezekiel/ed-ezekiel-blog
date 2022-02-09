@@ -39,5 +39,3 @@ Finally, thank you web3devs, for taking the chance on a bootcamp grad without a 
 There are so many things I want to learn going forward. I am particularly interested in developing static sites, using serverless features like AWS lamda, and learning the Express framework.
 
 I also hope to give back to the programming community and to Memphis. If you are just starting your journey in software development I would be happy to talk. Just reach out using one of the social media icons on this site.
-
-</article>
