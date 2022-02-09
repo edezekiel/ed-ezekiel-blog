@@ -12,17 +12,24 @@ const AboutPage = () => {
       <Header pageTitle={pageTitle}></Header>
       <article>
         <p>
-          I live in Memphis, TN with my wife, two children, and two dogs (go Grizz!). I work at <a href="https://www.ubiquisoft.com/">Ubiquisoft</a> as a frontend web developer.
+          I live in Memphis, TN with my wife, two children, and two dogs. I work
+          at <a href="https://herodevs.com/">HeroDevs</a> as a Senior Angular 
+          Engineer. In my free time I love watching the Memphis Grizzlies and
+          reading science fiction books.
         </p>
         <p>
-          My passion for coding began at a legal tech company. I started working
-          there as an attorney, but steadily got hooked on programming.
+          My passion for coding began at a legal tech company in Atlanta, GA. I 
+          worked there as an attorney but picked up bits and pieces of 
+          coding skills from programmers at the company.
         </p>
         <p>
-          In 2018 I enrolled in Flatiron's immersive software engineering
-          bootcamp. It was an incredible experience where I learned JavaScript,
-          React, Redux, Ruby, and Rails. I also got my first taste of pair
-          programming and agile software development.
+          In 2018, I enrolled in Flatiron's immersive software engineering
+          bootcamp. I learned JavaScript, React, Redux, Ruby, and Rails. I also 
+          conducted pair programming and practiced agile software development.
+        </p>
+        <p>After graduating from Flatiron I moved to Memphis, TN. I joined 
+          Ubiquisoft Technologies as a frontend developer and built Angular 
+          applications for enterprise clients.
         </p>
       </article>
 
